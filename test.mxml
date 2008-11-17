@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" creationComplete="init()">
+    <mx:Script>
+        <![CDATA[
+            private var square:Shape = new Shape();
+            private var circle:Sprite = new Sprite();
+            
+            public function transformIt():void{
+                circle.transform.matrix=new Matrix(1,0,0,1,-15,-15);        
+            }
+            public function moveIt():void{
+                circle.x=-15;
+                circle.y=-15;
+            }
+            public function expandIt():void{
+                viewer.width=viewer.height=300;    
+            }
+            public function init():void{                
+                square.graphics.beginFill(0xffffff);
+                square.graphics.drawRect(0, 0, 100, 100);
+                square.graphics.endFill();
+                viewer.addChild(square);
+                
+                circle.graphics.lineStyle(1, 0x000000);
+                circle.graphics.beginFill(0x0000ff);
+                circle.graphics.drawCircle(25, 25, 25);
+                circle.graphics.endFill();
+                viewer.addChild(circle);
+                
+                circle.mask = square;
+            }
+        ]]>
+    </mx:Script>
+    <mx:Canvas id="canvas" x="28" y="30" width="200" height="200" backgroundColor="#FFFFFF" clipContent="true" borderStyle="inset">
+        <mx:UIComponent id="viewer" x="0" y="0" width="100" height="100" />
+    </mx:Canvas>    
+    <mx:Button x="50" y="3" label="Move" click="moveIt()"/>
+    <mx:Button x="150" y="3" label="Transform" click="transformIt()"/>
+    <mx:Button x="250" y="3" label="Expand" click="expandIt()"/>
+</mx:Application>

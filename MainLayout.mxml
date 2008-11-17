@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!-- Simple example to demonstrate the HSlider control. -->
+<mx:Application 
+xmlns:mx="http://www.adobe.com/2006/mxml" 
+xmlns:as="*" 
+backgroundGradientColors="[0xCCCCCC, 0x66CCFF]"
+mouseWheel="onMouseWheel(event)"
+creationComplete="initApp()">
+
+
+    <mx:Script>
+        <![CDATA[
+   
+ 	 	  import flash.geom.Rectangle;
+
+          private var imageWidth:Number=0;
+          private var imageHeight:Number=0;
+		  
+          private var canvasShaper:Shape = new Shape();
+		  public function onMouseWheel(event:MouseEvent):void {
+		  	trace("event.delta" + event.delta);
+		  	hSlider.value+=(hSlider.tickInterval * event.delta);
+			changeSize();
+		  }
+		  public function initApp():void {
+		  	 trace("HW " + main_canvas.x +" "+main_canvas.y );
+		  	 trace("HW " + main_canvas.width +" "+main_canvas.height );
+			 
+             canvasShaper.graphics.beginFill(0xffffff);
+             canvasShaper.graphics.drawRect(main_canvas.x, main_canvas.y, main_canvas.width , main_canvas.height);
+             canvasShaper.graphics.endFill();
+             main_canvas.addChild(canvasShaper);
+			 
+			 main_canvas.mask = canvasShaper;
+			 
+			 //main_canvas.graphics.beginFill(0x000000);
+			 //main_canvas.graphics.drawRect(main_canvas.x, main_canvas.y, main_canvas.width , main_canvas.height);
+			 
+			 //main_canvas.graphics.beginFill(0x0000ff);
+			 //main_canvas.graphics.drawRect(100, 100, 200 , 200);
+			 
+			 main_canvas.content.x = main_canvas.width / 2 - main_canvas.content.width/2;
+			 //main_canvas.content.y = - main_canvas.height / 2 + main_canvas.content.height/2;
+		  	
+			 
+		  }
+          // Event handler function to change the image size.
+          private function changeSize():void
+	      {
+		  	 //trace("HW " + main_canvas.width +" "+main_canvas.height );
+	         main_canvas.content.scaleX= hSlider.value/100;
+	         main_canvas.content.scaleY= hSlider.value/100;
+	      }
+        ]]>
+    </mx:Script>
+
+    <mx:Panel id="panel" title="HSlider Control Example" height="100%" width="95%" 
+        paddingTop="10" paddingBottom="10" paddingLeft="10" paddingRight="10">
+        <mx:HBox clipContent="true" height="100%" width="100%"  >
+			<mx:DividedBox direction="horizontal" width="100%" height="100%">
+				<mx:Panel 	
+				mouseDown="main_canvas.onMouseDown(event)"
+				mouseUp="main_canvas.onMouseUp(event)"
+				
+				paddingTop="0" paddingBottom="0" paddingLeft="0" paddingRight="0" width="90%" height="100%" backgroundColor="0xCCCCCC">
+					<as:main id="main_canvas" height="100%" width="100%"/>
+				</mx:Panel>
+				<mx:Panel title="Node Info" width="10%" height="100%" backgroundColor="0xCCCCCC">			
+				</mx:Panel>
+			</mx:DividedBox>
+		</mx:HBox>
+
+        <mx:Label color="blue" text="Drag the slider to resize the image."/>
+
+        <mx:HSlider id="hSlider" minimum="10" maximum="1000" value="100" 
+            dataTipPlacement="top" 
+            tickColor="black" 
+            snapInterval="1" tickInterval="10" 
+            labels="['10%','1000%']" 
+            allowTrackClick="true" 
+            liveDragging="true"
+            change="changeSize();"/>
+			
+    </mx:Panel>
+</mx:Application>   

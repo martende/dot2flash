@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- http://blog.flexexamples.com/2008/02/02/clipping-a-flex-containers-content-using-the-clipcontent-property/ -->
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns:as="*" 
+        layout="vertical"
+        verticalAlign="middle"
+        backgroundColor="white" viewSourceURL="srcview/index.html">
+
+    <mx:ApplicationControlBar dock="true">
+        <mx:CheckBox id="checkBox"
+                label="clipContent:"
+                labelPlacement="left"
+                selected="false" />
+    </mx:ApplicationControlBar>
+
+    <mx:Box id="box"
+            clipContent="{checkBox.selected}"
+            width="320"
+            height="240">
+		<as:main id="img" height="100%" width="100%"/>
+ <!--       <mx:Image id="img"
+                source="http://www.helpexamples.com/flash/images/image1.jpg" />
+-->
+    </mx:Box>
+
+    <mx:Label text="{img.width} x {img.height}" />
+
+</mx:Application>

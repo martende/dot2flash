@@ -1,0 +1,18 @@
+  <digraph name="NodesGraph">
+    <connector __traffic="2076" color="black" fontcolor="black" fontsize="8" from="B3" label="39 %(2076)" lp="157,38" penwidth="1" pos="e,121,32 121,44 132,43 139,41 139,38 139,36 136,35 131,33" style="filled" to="B3" weight="2" />
+    <connector __traffic="1719" color="black" fontcolor="black" fontsize="8" from="B8" label="42 %(1719)" lp="155,44" penwidth="1" pos="e,143,19 183,45 174,39 162,31 151,24" style="filled" to="C3" weight="2" />
+    <connector __traffic="1583" color="black" fontcolor="black" fontsize="8" from="C3" label="64 %(1583)" lp="144,53" penwidth="1" pos="e,107,89 129,19 129,27 129,38 126,48 123,59 117,71 112,80" style="filled" to="C6" weight="2" />
+    <connector __traffic="932" color="black" fontcolor="black" fontsize="8" from="B3" label="17 %(932)" lp="136,39" penwidth="1" pos="e,151,48 121,45 128,46 134,46 141,47" style="filled" to="B8" weight="2" />
+    <connector __traffic="864" color="black" fontcolor="black" fontsize="8" from="B8" label="21 %(864)" lp="135,56" penwidth="1" pos="e,121,45 151,49 145,48 138,48 131,47" style="filled" to="B3" weight="2" />
+    <connector __traffic="564" color="black" fontcolor="black" fontsize="8" from="C3" label="22 %(564)" lp="90,13" penwidth="1" pos="e,82,29 107,19 102,21 97,23 91,25" style="filled" to="B3" weight="2" />
+    <connector __traffic="553" color="black" fontcolor="black" fontsize="8" from="C6" label="23 %(553)" lp="66,78" penwidth="1" pos="e,67,47 95,89 90,80 80,66 73,55" style="filled" to="B3" weight="2" />
+    <connector __traffic="402" color="black" fontcolor="black" fontsize="8" from="C6" label="17 %(402)" lp="192,98" penwidth="1" pos="e,158,92 158,104 169,104 176,101 176,98 176,96 173,94 168,93" style="filled" to="C6" weight="2" />
+    <connector __traffic="388" color="black" fontcolor="black" fontsize="8" from="B3" label="7 %(388)" lp="91,14" penwidth="1" pos="e,108,19 83,29 88,27 93,25 99,23" style="filled" to="C3" weight="1" />
+    <connector __traffic="344" color="black" fontcolor="black" fontsize="8" from="B3" label="6 %(344)" lp="94,59" penwidth="1" pos="e,95,89 67,47 72,56 82,70 89,81" style="filled" to="C6" weight="1" />
+    <connector __traffic="305" color="black" fontcolor="black" fontsize="8" from="C6" label="13 %(305)" lp="141,61" penwidth="1" pos="e,129,19 107,89 113,79 122,63 126,48 128,42 129,35 129,29" style="filled" to="C3" weight="2" />
+    <node id="graph" bb="0,0,244,108" />
+    <node id="B3" __out_traffic="5220" __shown_traffic_procent="37" color="turquoise" fontsize="8" height="0.25" label="Domainverwaltung Schritt (1ab)" pos="61,38" shape="box" style="filled" width="1.67" />
+    <node id="B8" __out_traffic="4075" __shown_traffic_procent="28.9" color="turquoise" fontsize="8" height="0.25" label="Verwalten Schritt (1.1)" pos="197,54" shape="box" style="filled" width="1.28" />
+    <node id="C3" __out_traffic="2457" __shown_traffic_procent="17.4" color="turquoise" fontsize="8" height="0.25" label="Domainumleitung einrichten (1.1.1)" pos="129,10" shape="box" style="filled" width="1.81" />
+    <node id="C6" __out_traffic="2346" __shown_traffic_procent="16.6" color="turquoise" fontsize="8" height="0.25" label="Umleitung aktivieren (1.1.1.1)" pos="101,98" shape="box" style="filled" width="1.58" />
+  </digraph>
